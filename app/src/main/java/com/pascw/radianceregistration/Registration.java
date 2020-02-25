@@ -44,11 +44,11 @@ public class Registration extends AppCompatActivity {
     private CheckBox FE, SE, TE, BE, Codewars, Recodeit, Shutterup, Quizmaster;
     private EditText Participant1, Participant2, Contact, Email, College, Date;
     private String name1, name2, contact1, mail1, college1, team1, team2;
-    private String year, eventcodewars, eventrecodeit, eventshutterup, eventquizmaster;
+    private String year="", eventcodewars, eventrecodeit, eventshutterup, eventquizmaster;
     private RadioGroup radioGroup1, radioGroup2, radioGroup3;
     private RadioButton radio1, radio2, radio3, radio4, one, two, three, upinew, cashnew;
     private EditText editText2, editText3;
-    private TextView result;
+    private TextView result, yearE;
     private FirebaseAuth mAuth;
     private ProgressBar p;
     int sum = 0;
@@ -101,6 +101,7 @@ public class Registration extends AppCompatActivity {
         two = findViewById(R.id.two);
         three = findViewById(R.id.three);
         result = findViewById(R.id.result);
+        yearE = findViewById(R.id.Year);
         setSupportActionBar(stool);
         getSupportActionBar().setTitle("REGISTRATION");
         stool.setTitleTextColor(0xFF3988e1);
@@ -219,20 +220,7 @@ public class Registration extends AppCompatActivity {
             }
         });
 
-        cashnew.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    amo();
-                }
-            }
-        });
-        upinew.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                amo();
-            }
-        });
+
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -242,6 +230,10 @@ public class Registration extends AppCompatActivity {
                 college1 = College.getText().toString().trim();
                 team1 = editText2.getText().toString().trim();
                 team2 = editText3.getText().toString().trim();
+
+                Boolean flagCW = true;
+                Boolean flagRI = true;
+                Boolean flagSU = true;
 
 
                 if (isEmpty(name1)) {
@@ -271,7 +263,8 @@ public class Registration extends AppCompatActivity {
                         if (isEmpty(team1)) {
                             editText2.setError("This field cannot be empty.");
                             editText2.requestFocus();
-                        }
+                            flagCW = false;
+                        } else flagCW = true;
                     }
                 }
                 if (Recodeit.isChecked()) {
@@ -279,17 +272,26 @@ public class Registration extends AppCompatActivity {
                         if (isEmpty(team2)) {
                             editText3.setError("This field cannot be empty.");
                             editText3.requestFocus();
-                        }
+                            flagRI = false;
+                        } else flagRI = true;
+                    }
+                }
+                if (Shutterup.isChecked()) {
+                    if (one.isChecked() || two.isChecked() || three.isChecked()) {
+                        flagSU = true;
+                    } else {
+                        flagSU = false;
                     }
                 }
                 if(!(FE.isChecked() || SE.isChecked() || TE.isChecked() || BE.isChecked())){
-                    FE.setError("This field cannot be empty.");
+                    yearE.setError("This field cannot be empty.");
+                    yearE.requestFocus();
+                    year = "";
                 }
-//                amo();
-                if (!isEmpty(name1) && !isEmpty(contact1) && !isEmpty(mail1) && !isEmpty(college1) && isContactValid(contact1) && isEmailValid(mail1)) {
-                    if (((radio2.isChecked() && !team1.isEmpty()) || !radio2.isChecked()) && ((radio4.isChecked() && !team2.isEmpty()) || !radio4.isChecked())) {
-                        if ((radio1.isChecked() || radio2.isChecked() || radio3.isChecked() || radio4.isChecked() || one.isChecked() || two.isChecked() || three
-                                .isChecked() || Quizmaster.isChecked() || SE.isChecked() || FE.isChecked() || TE.isChecked() || BE.isChecked())) {
+
+                if (!isEmpty(name1) && !isEmpty(contact1) && !isEmpty(mail1) && !isEmpty(college1) && isContactValid(contact1) && isEmailValid(mail1) && !year.isEmpty()) {
+                    if (sum != 0) {
+                        if (flagCW && flagRI && flagSU) {
                             p.setVisibility(View.VISIBLE);
                             info.setParticipant1(name1);
                             info.setCollegename(college1);
@@ -299,15 +301,16 @@ public class Registration extends AppCompatActivity {
                             info.setAmount(sum);
                             Map<String, String> ev = new HashMap<String, String>();
                             if (Codewars.isChecked()) {
-                                if (team1 != null) {
+                                if (radio2.isChecked())
                                     ev.put("Code Wars", team1);
-                                } else
+                                if (radio1.isChecked())
                                     ev.put("Code Wars", " ");
                             }
                             if (Recodeit.isChecked()) {
-                                if (team2 != null) {
+                                if (radio4.isChecked()) {
                                     ev.put("Recode It", team2);
-                                } else
+                                }
+                                if (radio3.isChecked())
                                     ev.put("Recode It", " ");
                             }
                             if (Shutterup.isChecked()) {
@@ -323,27 +326,18 @@ public class Registration extends AppCompatActivity {
                                 ev.put("QuizMaster", " ");
                             }
                             info.setMapi(ev);
-                            if (cashnew.isChecked()) {
-                                info.setPaystatus("Cash");
-                                /* startActivity(new Intent(getApplicationContext(),cash.class));*/
-                                p.setVisibility(View.GONE);
-                                Intent intent = new Intent(getApplicationContext(), cash.class);
-                                intent.putExtra("Object", info);
-                                startActivity(intent);
-                                finish();
-                            } else if (upinew.isChecked()) {
-                                info.setPaystatus("UPI");
-                                UPI_trans();
-                                p.setVisibility(View.GONE);
-                            }
-                        } else {
-                            Toast.makeText(Registration.this, "PLEASE SELECT ATLEAST ONE EVENT", Toast.LENGTH_SHORT).show();
+                            info.setPaystatus("UPI");
+                            UPI_trans();
+                            //Register Listener for Events
+                            p.setVisibility(View.GONE);
                         }
+                    } else {
+                        Toast.makeText(Registration.this, "PLEASE SELECT ATLEAST ONE EVENT", Toast.LENGTH_SHORT).show();
                     }
                 }
+
             }
         });
-
     }
 
     public void amo() {
@@ -397,38 +391,43 @@ public class Registration extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.FE:
-
+                yearE.setError(null);
                 SE.setChecked(false);
                 TE.setChecked(false);
                 BE.setChecked(false);
                 year = "FE";
-
                 break;
-            case R.id.BE:
 
-                SE.setChecked(false);
-                TE.setChecked(false);
-                FE.setChecked(false);
-                year = "BE";
-
-                break;
             case R.id.SE:
-
+                yearE.setError(null);
                 FE.setChecked(false);
                 TE.setChecked(false);
                 BE.setChecked(false);
                 year = "SE";
-
                 break;
-            case R.id.TE:
 
+            case R.id.TE:
+                yearE.setError(null);
                 SE.setChecked(false);
                 FE.setChecked(false);
                 BE.setChecked(false);
                 year = "TE";
-
                 break;
 
+            case R.id.BE:
+                yearE.setError(null);
+                SE.setChecked(false);
+                TE.setChecked(false);
+                FE.setChecked(false);
+                year = "BE";
+                break;
+
+            default:
+                FE.setChecked(false);
+                SE.setChecked(false);
+                FE.setChecked(false);
+                BE.setChecked(false);
+                year = "";
 
         }
     }
@@ -533,7 +532,6 @@ public class Registration extends AppCompatActivity {
 
                                 String message = "";
 
-                                Resources res = getResources();
                                 String email1 = info.getEmail().toString();
                                 String name1 = info.getParticipant1().toString();
                                 String college = info.getCollegename().toString();

@@ -12,7 +12,6 @@ import com.shreyaspatil.EasyUpiPayment.listener.PaymentStatusListener;
 import com.shreyaspatil.EasyUpiPayment.model.TransactionDetails;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,11 +40,11 @@ public class nonvolunteer extends AppCompatActivity {
     private CheckBox FE, SE, TE, BE, Codewars, Recodeit, Shutterup, Quizmaster;
     private EditText Participant1, Participant2, Contact, Email, College, Date;
     private String name1, name2, contact1, mail1, college1, team1, team2;
-    private String year, eventcodewars, eventrecodeit, eventshutterup, eventquizmaster;
+    private String year = "", eventcodewars, eventrecodeit, eventshutterup, eventquizmaster;
     private RadioGroup radioGroup1, radioGroup2, radioGroup3;
     private RadioButton radio1, radio2, radio3, radio4, one, two, three;
     private EditText editText2, editText3;
-    private TextView result;
+    private TextView result, yearE;
     int sum=0;
     float sumPay=0;
     FirebaseAuth mAuth;
@@ -102,6 +101,7 @@ public class nonvolunteer extends AppCompatActivity {
         three = findViewById(R.id.three);
         result = findViewById(R.id.result);
         p.setVisibility(View.GONE);
+        yearE = findViewById(R.id.Year);
         //Create instance of EasyUpiPayment
 
         amo();
@@ -226,6 +226,11 @@ public class nonvolunteer extends AppCompatActivity {
                 team1 = editText2.getText().toString().trim();
                 team2 = editText3.getText().toString().trim();
 
+                Boolean flagCW = true;
+                Boolean flagRI = true;
+                Boolean flagSU = true;
+
+
                 if (isEmpty(name1)) {
                     Participant1.setError("This field cannot be empty.");
                     Participant1.requestFocus();
@@ -253,7 +258,8 @@ public class nonvolunteer extends AppCompatActivity {
                         if (isEmpty(team1)) {
                             editText2.setError("This field cannot be empty.");
                             editText2.requestFocus();
-                        }
+                            flagCW = false;
+                        } else flagCW = true;
                     }
                 }
                 if (Recodeit.isChecked()) {
@@ -261,17 +267,26 @@ public class nonvolunteer extends AppCompatActivity {
                         if (isEmpty(team2)) {
                             editText3.setError("This field cannot be empty.");
                             editText3.requestFocus();
-                        }
+                            flagRI = false;
+                        } else flagRI = true;
+                    }
+                }
+                if (Shutterup.isChecked()) {
+                    if (one.isChecked() || two.isChecked() || three.isChecked()) {
+                        flagSU = true;
+                    } else {
+                        flagSU = false;
                     }
                 }
                 if(!(FE.isChecked() || SE.isChecked() || TE.isChecked() || BE.isChecked())){
-                    FE.setError("This field cannot be empty.");
+                    yearE.setError("This field cannot be empty.");
+                    yearE.requestFocus();
+                    year = "";
                 }
-               // amo();
-                if (!isEmpty(name1) && !isEmpty(contact1) && !isEmpty(mail1) && !isEmpty(college1) && isContactValid(contact1) && isEmailValid(mail1)) {
-                    if (((radio2.isChecked() && !team1.isEmpty()) || !radio2.isChecked()) && ((radio4.isChecked() && !team2.isEmpty()) || !radio4.isChecked())) {
-                        if ((radio1.isChecked() || (radio2.isChecked() && team1 != null) || radio3.isChecked() || (radio4.isChecked() && team2 != null) || one.isChecked() || two.isChecked() || three
-                                .isChecked() || Quizmaster.isChecked() && (SE.isChecked() || FE.isChecked() || TE.isChecked() || BE.isChecked()))) {
+
+                if (!isEmpty(name1) && !isEmpty(contact1) && !isEmpty(mail1) && !isEmpty(college1) && isContactValid(contact1) && isEmailValid(mail1) && !year.isEmpty()) {
+                    if (sum != 0) {
+                        if (flagCW && flagRI && flagSU) {
                             p.setVisibility(View.VISIBLE);
                             info.setParticipant1(name1);
                             info.setCollegename(college1);
@@ -310,15 +325,14 @@ public class nonvolunteer extends AppCompatActivity {
                             UPI_trans();
                             //Register Listener for Events
                             p.setVisibility(View.GONE);
-                        } else {
-                            Toast.makeText(nonvolunteer.this, "PLEASE SELECT ATLEAST ONE EVENT", Toast.LENGTH_SHORT).show();
                         }
+                    } else {
+                        Toast.makeText(nonvolunteer.this, "PLEASE SELECT ATLEAST ONE EVENT", Toast.LENGTH_SHORT).show();
                     }
                 }
 
             }
         });
-
     }
 
     public void amo() {
@@ -424,38 +438,43 @@ public class nonvolunteer extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.FE:
-
+                yearE.setError(null);
                 SE.setChecked(false);
                 TE.setChecked(false);
                 BE.setChecked(false);
                 year = "FE";
-
                 break;
-            case R.id.BE:
 
-                SE.setChecked(false);
-                TE.setChecked(false);
-                FE.setChecked(false);
-                year = "SE";
-
-                break;
             case R.id.SE:
-
+                yearE.setError(null);
                 FE.setChecked(false);
                 TE.setChecked(false);
+                BE.setChecked(false);
+                year = "SE";
+                break;
+
+            case R.id.TE:
+                yearE.setError(null);
+                SE.setChecked(false);
+                FE.setChecked(false);
                 BE.setChecked(false);
                 year = "TE";
-
                 break;
-            case R.id.TE:
 
+            case R.id.BE:
+                yearE.setError(null);
+                SE.setChecked(false);
+                TE.setChecked(false);
+                FE.setChecked(false);
+                year = "BE";
+                break;
+
+            default:
+                FE.setChecked(false);
                 SE.setChecked(false);
                 FE.setChecked(false);
                 BE.setChecked(false);
-                year = "BE";
-
-                break;
-
+                year = "";
 
         }
     }
@@ -480,7 +499,6 @@ public class nonvolunteer extends AppCompatActivity {
                         String message = "";
 
                         // StringBuilder events = new StringBuilder(" ");
-                        Resources res = getResources();
                         Map<String, String> mp = info.getMapi();
                         String email1 = info.getEmail().toString();
                         String name1 = info.getParticipant1().toString();
@@ -500,16 +518,6 @@ public class nonvolunteer extends AppCompatActivity {
                                 "\n" +
                                 "All the best!!\n" +
                                 "PICT ACM-W Student Chapter.";
-                        message = "Dear " + name1 + ",\n\n" + "Greetings from PASCW!!\n" +
-                                "You have successfully registered for RADIANCE-2020\n" + "\n\n\n" +
-                                "RECEIPT\n" +
-                                "Name:-" + name1 + "\n" +
-                                "College Name:-" + college + "\n" +
-                                "Events:-" + events + "\n" +
-                                "\n" +
-                                "All the best!!\n" +
-                                "PICT ACM-W Student Chapter.";
-
 
                         //Creating SendMail object
                         SendEmail sm = new SendEmail(nonvolunteer.this, email1, subject, message);

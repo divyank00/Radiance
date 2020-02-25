@@ -136,15 +136,17 @@
                     android:paddingTop="30dp">
 
                     <TextView
-                        android:id="@+id/Year"
+                            android:layout_marginRight="5dp"
+                            android:id="@+id/Year"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Year:"
+                        android:text="Year: "
                         android:textColor="#FFFFFF"
                         android:textSize="20dp" />
 
                     <CheckBox
-                        android:id="@+id/FE"
+                            android:layout_marginRight="10dp"
+                            android:id="@+id/FE"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
@@ -153,7 +155,8 @@
                         android:textColorHint="#FFFFFF" />
 
                     <CheckBox
-                        android:id="@+id/SE"
+                            android:layout_marginRight="10dp"
+                            android:id="@+id/SE"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
@@ -164,7 +167,8 @@
                         />
 
                     <CheckBox
-                        android:id="@+id/TE"
+                            android:layout_marginRight="10dp"
+                            android:id="@+id/TE"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
@@ -356,7 +360,7 @@
                     android:paddingTop="30dp"
                     android:text="TOTAL AMOUNT"
                     android:textColor="@color/blue"
-                    android:textSize="20dp"
+                    android:textSize="24dp"
                     android:textStyle="bold" />
 
 
@@ -396,7 +400,8 @@
                     android:layout_gravity="center"
                     android:background="@drawable/borderbutton"
                     android:text="PAY"
-                    android:layout_marginBottom="20dp"
+                        android:textSize="24dp"
+                        android:layout_marginBottom="30dp"
                     android:textColor="@color/blue" />
 
                 <ProgressBar
