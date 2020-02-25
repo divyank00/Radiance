@@ -326,16 +326,25 @@ public class Registration extends AppCompatActivity {
                                 ev.put("QuizMaster", " ");
                             }
                             info.setMapi(ev);
-                            info.setPaystatus("UPI");
-                            UPI_trans();
-                            //Register Listener for Events
-                            p.setVisibility(View.GONE);
+
+                            if (cashnew.isChecked()) {
+                                info.setPaystatus("Cash");
+                                /* startActivity(new Intent(getApplicationContext(),cash.class));*/
+                                p.setVisibility(View.GONE);
+                                Intent intent = new Intent(getApplicationContext(), cash.class);
+                                intent.putExtra("Object", info);
+                                startActivity(intent);
+                                finish();
+                            } else if (upinew.isChecked()) {
+                                info.setPaystatus("UPI");
+                                UPI_trans();
+                                p.setVisibility(View.GONE);
+                            }
                         }
                     } else {
                         Toast.makeText(Registration.this, "PLEASE SELECT ATLEAST ONE EVENT", Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }
         });
     }
