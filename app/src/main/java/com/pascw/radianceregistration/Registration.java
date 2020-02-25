@@ -117,31 +117,9 @@ public class Registration extends AppCompatActivity {
                     radioGroup1.setVisibility(View.VISIBLE);
                     radio1.setChecked(true);
                     amo();
-                    radio2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
-                            if (b) {
-                                editText2.setVisibility(View.VISIBLE);
-                                amo();
-                            } else {
-                                editText2.setVisibility(View.GONE);
-                                amo();
-                            }
-                        }
-                    });
                 } else {
-                    if (radio1.isChecked()) {
-                        radio1.setChecked(false);
-                        amo();
-                    }
-                    if (radio2.isChecked()) {
-                        radio2.setChecked(false);
-                        amo();
-                    }
+                    amo();
                     editText2.setText("");
-                    radioGroup1.setVisibility(View.INVISIBLE);
-                    editText2.setVisibility(View.INVISIBLE);
                     radioGroup1.setVisibility(View.GONE);
                     editText2.setVisibility(View.GONE);
                 }
@@ -156,7 +134,28 @@ public class Registration extends AppCompatActivity {
         radio2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                amo();
+                if (b) {
+                    editText2.setVisibility(View.VISIBLE);
+                    amo();
+                } else {
+                    editText2.setVisibility(View.GONE);
+                    amo();
+                }
+            }
+        });
+        Recodeit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    radioGroup2.setVisibility(View.VISIBLE);
+                    radio3.setChecked(true);
+                    amo();
+                } else {
+                    amo();
+                    editText3.setText("");
+                    radioGroup2.setVisibility(View.GONE);
+                    editText3.setVisibility(View.GONE);
+                }
             }
         });
         radio3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -168,45 +167,16 @@ public class Registration extends AppCompatActivity {
         radio4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                amo();
-            }
-        });
-        Recodeit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    radioGroup2.setVisibility(View.VISIBLE);
-                    radio3.setChecked(true);
                     amo();
-                    radio4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                            if (b) {
-                                amo();
-                                editText3.setVisibility(View.VISIBLE);
-                            } else {
-                                amo();
-                                editText3.setVisibility(View.GONE);
-                            }
-                        }
-                    });
+                    editText3.setVisibility(View.VISIBLE);
                 } else {
-                    if (radio3.isChecked()) {
-                        radio3.setChecked(false);
-                        amo();
-                    }
-                    if (radio4.isChecked()) {
-                        radio4.setChecked(false);
-                        amo();
-                    }
-                    editText3.setText("");
-                    radioGroup2.setVisibility(View.INVISIBLE);
-                    editText3.setVisibility(View.INVISIBLE);
-                    radioGroup2.setVisibility(View.GONE);
+                    amo();
                     editText3.setVisibility(View.GONE);
                 }
             }
         });
+
         Shutterup.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -215,17 +185,7 @@ public class Registration extends AppCompatActivity {
                     one.setChecked(true);
                     amo();
                 } else {
-                    if (one.isChecked()) {
-                        amo();
-                        one.setChecked(false);
-                    } else if (two.isChecked()) {
-                        amo();
-                        two.setChecked(false);
-                    } else {
-                        amo();
-                        three.setChecked(false);
-                    }
-                    radioGroup3.setVisibility(View.INVISIBLE);
+                    amo();
                     radioGroup3.setVisibility(View.GONE);
                 }
             }
@@ -234,21 +194,18 @@ public class Registration extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 amo();
-
             }
         });
         two.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 amo();
-
             }
         });
         three.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 amo();
-
             }
         });
         Quizmaster.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -261,6 +218,7 @@ public class Registration extends AppCompatActivity {
                 }
             }
         });
+
         cashnew.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
