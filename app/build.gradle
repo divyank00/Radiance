@@ -41,7 +41,6 @@ dependencies {
     implementation 'me.spark:submitbutton:1.0.1'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.airbnb.android:lottie:3.4.0'
-    implementation 'com.yarolegovich:sliding-root-nav:1.1.0'
     implementation 'com.android.support:multidex:1.0.3'
     implementation('com.jakewharton:butterknife:8.8.1') {
         exclude module: 'android-support-v4'

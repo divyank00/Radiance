@@ -1,14 +1,5 @@
 package com.example.radianceregistration;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.graphics.Rect;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
-
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.nightonke.boommenu.Animation.BoomEnum;
 import com.nightonke.boommenu.Animation.EaseEnum;
@@ -18,8 +9,14 @@ import com.nightonke.boommenu.BoomMenuButton;
 
 import org.w3c.dom.Text;
 
+import android.content.Intent;
+import android.graphics.Rect;
+import android.os.Bundle;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Boommain extends AppCompatActivity {
     List<Event> eventList = new ArrayList<>();
@@ -34,7 +31,6 @@ public class Boommain extends AppCompatActivity {
         bbb.setBoomEnum(BoomEnum.LINE);
         bbb.setShowRotateEaseEnum(EaseEnum.EaseOutBack);
         bbb.setUse3DTransformAnimation(true);
-
 
         datado();
 

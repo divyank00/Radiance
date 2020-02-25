@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Radiance</string>
+    <string name="app_name">Radiance\' 20</string>
     <array name="payment">
         <item>Cash</item>
         <item>UPI</item>
