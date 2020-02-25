@@ -1,4 +1,4 @@
-package com.example.radianceregistration;
+package com.pascw.radianceregistration;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;

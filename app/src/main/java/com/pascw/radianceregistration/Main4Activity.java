@@ -1,4 +1,4 @@
-package com.example.radianceregistration;
+package com.pascw.radianceregistration;
 
 import androidx.appcompat.app.AppCompatActivity;
 

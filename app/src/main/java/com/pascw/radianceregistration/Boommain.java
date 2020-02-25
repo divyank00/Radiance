@@ -1,4 +1,4 @@
-package com.example.radianceregistration;
+package com.pascw.radianceregistration;
 
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.nightonke.boommenu.Animation.BoomEnum;

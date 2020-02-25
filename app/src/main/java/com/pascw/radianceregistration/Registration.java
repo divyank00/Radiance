@@ -1,4 +1,4 @@
-package com.example.radianceregistration;
+package com.pascw.radianceregistration;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

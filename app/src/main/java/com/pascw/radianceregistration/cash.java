@@ -1,4 +1,4 @@
-package com.example.radianceregistration;
+package com.pascw.radianceregistration;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;

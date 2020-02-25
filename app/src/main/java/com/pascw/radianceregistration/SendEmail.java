@@ -1,4 +1,4 @@
-package com.example.radianceregistration;
+package com.pascw.radianceregistration;
 
 import android.app.ProgressDialog;
 import android.content.Context;

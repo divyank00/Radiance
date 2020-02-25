@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:338520564546:android:4a8a0cee39fa85e45a5edb",
         "android_client_info": {
-          "package_name": "com.example.radianceregistration"
+          "package_name": "com.pascw.radianceregistration"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "338520564546-o3bo8a0oe5t1k9k1dd6mss06ag72173a.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.radianceregistration",
+            "package_name": "com.pascw.radianceregistration",
             "certificate_hash": "6df5a1ab87b00e743cc372849ce515dee24073cb"
           }
         },
