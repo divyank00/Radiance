@@ -505,16 +505,16 @@ public class nonvolunteer extends AppCompatActivity {
                         String college = info.getCollegename().toString();
                         String events = "";
                         for (Map.Entry<String, String> entry : mp.entrySet()) {
-                            events = events + entry.getKey() + " " + entry.getValue()+"\n";
+                            events = events + entry.getKey() + "  " + entry.getValue()+"\n";
                         }
                         String subject = "PASCW:- RADIANCE-2020 receipt";
                         message = "Dear " + name1 + ",\n\n" + "Greetings from PASCW!!\n" +
                                 "\n" +
                                 "You have successfully registered for RADIANCE-2020\n" + "\n\n" +
                                 "RECEIPT\n" +
-                                "Name:-" + name1 + "\n" +
-                                "College Name:-" + college + "\n" +
-                                "Events:-" + events + "\n" +
+                                "Name:- " + name1 + "\n" +
+                                "College Name:- " + college + "\n" +
+                                "Events:\n" + events + "\n" +
                                 "\n" +
                                 "All the best!!\n" +
                                 "PICT ACM-W Student Chapter.";
