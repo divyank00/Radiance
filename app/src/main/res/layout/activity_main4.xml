@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#141414"
+        android:orientation="vertical"
+        tools:context=".Main4Activity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:theme="@style/ToolbarTheme"
+                android:title="ABOUT US"
+                android:titleTextColor="@color/blue" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:paddingTop="20dp"
+                android:text="PASC is the most active ACM Chapter in
+INDIA. PASC has won the best student chapter India Award for three consecutive years. At PASC, we all work together as a team.
+We take the utmost effort for the success
+of each and every member of PASC.\n\nAssociation for Computing Machinery's Council on Women in Computing is an exclusive woman's only wing of ACM which supports and commemorates the participation, contribution and achievements of women in technical domain.\n\nPASCW supports, celebrates and advocates internationally for the full engagement of women in all aspects of the computing field, providing a wide range of programs and services at the same time working in large community to advance the contribution of technical women."
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+        <LinearLayout
+                android:gravity="center|bottom"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="DEVELOPED WITH  "
+                    android:textColor="#FFFFFF" />
+
+            <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/heart"></ImageView>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="  BY ANDROID TEAM"
+                    android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

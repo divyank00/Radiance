@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#141414"
+    tools:context=".Sign">
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="REGISTRATION"
+            android:titleTextColor="@color/blue"
+            android:theme="@style/ToolbarTheme"
+            android:background="#000000"
+            />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_emailsign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textColorHint="#ffffff"
+        app:errorEnabled="true">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Emailsign"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#ffffff"
+            android:ems="10"
+            android:hint=" Volunteer Email ID"
+            android:inputType="textEmailAddress"
+            android:textColor="#ffffff" />
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <EditText-->
+<!--        android:id="@+id/Emailsign"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Email ID"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:textColorHint="#FFFFFF"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:paddingTop="30dp"-->
+<!--        />-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_pwdsign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:textColorHint="#ffffff"
+        app:errorEnabled="true">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Pwdsign"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#ffffff"
+            android:ems="10"
+            android:hint=" Password"
+            android:inputType="textPassword"
+            android:textColor="#ffffff" />
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <EditText-->
+<!--        android:id="@+id/Pwdsign"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:hint="password"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textColorHint="#FFFFFF"-->
+<!--        />-->
+<!--    <Button-->
+<!--        android:id="@+id/signin"-->
+<!--        android:layout_width= "275dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:text="   SIGN IN   "-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="14sp"-->
+<!--        android:layout_gravity="center_horizontal"/>-->
+<!--    <com.spark.submitbutton.SubmitButton-->
+<!--        android:id="@+id/layout_signin"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="550dp"-->
+<!--        android:text="   SIGN IN   "-->
+<!--        android:textSize="15sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:sub_btn_background="@color/white"-->
+<!--        app:sub_btn_duration="3000"-->
+<!--        android:textStyle="bold"-->
+<!--        app:sub_btn_line_color="#8BC34A"-->
+<!--        app:sub_btn_ripple_color="#03A9F4"-->
+<!--        app:sub_btn_tick_color="@color/white"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:visibility="invisible" />-->
+    <Button
+
+       android:layout_gravity="center"
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in"
+        android:textColor="@color/blue"
+        android:background="@drawable/borderbutton"
+/>
+    <ProgressBar
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

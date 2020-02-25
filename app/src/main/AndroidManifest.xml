@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.radianceregistration">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".nonvolunteer"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Sign"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Boommain"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Registration"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".upi"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".cash"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ThirdPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SecondPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ForthPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FifthPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main4Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main5Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

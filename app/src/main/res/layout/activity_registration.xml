@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#141414"
+    android:orientation="vertical"
+    tools:context=".Registration">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/stool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:title="REGISTRATION"
+        app:titleTextColor="@color/white" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:textColorHint="#ffffff"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Participant1"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="120dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="#ffffff"
+                        android:ems="10"
+                        android:hint="Participant Name"
+                        android:inputType="textPersonName"
+                        android:textColor="#ffffff" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="0dp"
+                    android:textColorHint="#ffffff"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="120dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="#ffffff"
+                        android:ems="10"
+                        android:hint="Contact no."
+                        android:inputType="number"
+                        android:textColor="#ffffff" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="0dp"
+                    android:textColorHint="#ffffff"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Email"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="120dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="#ffffff"
+                        android:ems="10"
+                        android:hint="Email ID"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#ffffff" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_college"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="0dp"
+                    android:textColorHint="#ffffff"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/College"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="120dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:backgroundTint="#ffffff"
+                        android:ems="10"
+                        android:hint="College Name"
+                        android:inputType="text"
+                        android:textColor="#ffffff" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="30dp">
+
+                    <TextView
+                        android:id="@+id/Year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Year:"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp" />
+
+                    <CheckBox
+                        android:id="@+id/FE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:hint="FE"
+                        android:onClick="onYearClicked"
+                        android:textColorHint="#FFFFFF" />
+
+                    <CheckBox
+                        android:id="@+id/SE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:hint="SE"
+                        android:onClick="onYearClicked"
+                        android:textColorHint="#FFFFFF"
+
+                        />
+
+                    <CheckBox
+                        android:id="@+id/TE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:hint="TE"
+                        android:onClick="onYearClicked"
+                        android:textColorHint="#FFFFFF" />
+
+
+                    <CheckBox
+                        android:id="@+id/BE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:hint="BE"
+                        android:onClick="onYearClicked"
+                        android:textColorHint="#FFFFFF" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/Technical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:text="TECHNICAL EVENTS"
+                    android:textAlignment="center"
+                    android:textColor="@color/blue"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/Codewars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:text="Code Wars"
+                    android:textColor="#FFFFFF" />
+
+                <RadioGroup
+                    android:id="@+id/rg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/ind1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:text="Individual Rs.80"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/team1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:text="Team Rs.100"
+                        android:textColor="#FFFFFF" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/name3"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:buttonTint="#FFFFFF"
+                    android:hint="Participant 2 Name"
+                    android:backgroundTint="#ffffff"
+                    android:inputType="text"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:visibility="gone" />
+
+                <CheckBox
+                    android:id="@+id/Recodeit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:text="Recode It"
+                    android:textColor="#FFFFFF" />
+
+                <RadioGroup
+                    android:id="@+id/rg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/ind2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:text="Individual Rs.80"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/team2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:buttonTint="#FFFFFF"
+                        android:text="Team Rs.100"
+                        android:textColor="#FFFFFF" />
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/name4"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:buttonTint="#FFFFFF"
+                    android:hint="Participant 2 Name"
+                    android:backgroundTint="#ffffff"
+                    android:inputType="text"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/Nontechnical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:text="NON-TECHNICAL EVENTS"
+                    android:textAlignment="center"
+                    android:textColor="@color/blue"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <CheckBox
+                    android:id="@+id/Shutterup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:hint="Shutter Up"
+                    android:textColorHint="#FFFFFF" />
+
+                <RadioGroup
+                    android:id="@+id/rg3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:text="1 Photo Rs.50"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:text="2 Photos Rs.80"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:text="3 Photos Rs.100"
+                        android:textColor="#FFFFFF" />
+                </RadioGroup>
+
+                <CheckBox
+                    android:id="@+id/Quizmaster"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:hint="Quiz Master  Rs.80"
+                    android:textColorHint="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingTop="30dp"
+                    android:text="TOTAL AMOUNT"
+                    android:textColor="@color/blue"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <RadioGroup
+                    android:id="@+id/rg4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/cashnew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:text="Cash "
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/upinew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#FFFFFF"
+                        android:text="UPI"
+                        android:textColor="#FFFFFF" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/borderbutton"
+                    android:text="PAY"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/blue" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
