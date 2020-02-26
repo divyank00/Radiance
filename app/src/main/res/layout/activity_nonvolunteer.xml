@@ -14,8 +14,7 @@
             android:title="REGISTRATION"
             android:titleTextColor="@color/blue"
             android:theme="@style/ToolbarTheme"
-            android:background="#000000"
-            />
+            android:background="#000000" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -249,7 +248,8 @@
                         android:buttonTint="#FFFFFF"/>
                     <RadioButton
                         android:id="@+id/team1"
-                        android:layout_width="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="20dp"
                         android:layout_height="wrap_content"
                         android:text="Team Rs.100"
                         android:textColor="#FFFFFF"

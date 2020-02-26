@@ -223,7 +223,8 @@
 
                     <RadioButton
                         android:id="@+id/team1"
-                        android:layout_width="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:buttonTint="#FFFFFF"
                         android:text="Team Rs.100"
